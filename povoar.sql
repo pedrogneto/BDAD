@@ -42,10 +42,10 @@ INSERT INTO "Modelo" VALUES ("Pacifica", 700, "Acer", "Guitarra Eletrica", "Yama
 INSERT INTO "Modelo" VALUES ("DX4", 1000, NULL, "Bateria", "Pearl");
 INSERT INTO "Modelo" VALUES ("Telecaster", 1000, "Acer", "Guitarra Eletrica", "Fender");
 
-INSERT INTO "Instrumento" VALUES (1, "Novo", 15, "Yamaha", "Pacifica", NULL);
-INSERT INTO "Instrumento" VALUES (2, "Novo", 25, "Gibson", "Les Paul", 1);
-INSERT INTO "Instrumento" VALUES (3, "Gasto", 10, "Fender", "Telecaster", 2);
-INSERT INTO "Instrumento" VALUES (4, "Novo", 25, "Pearl", "DX4", 3);
+INSERT INTO "Instrumento" VALUES (1, "Novo", 15, "Pacifica", NULL);
+INSERT INTO "Instrumento" VALUES (2, "Novo", 25, "Les Paul", 1);
+INSERT INTO "Instrumento" VALUES (3, "Gasto", 10, "Telecaster", 2);
+INSERT INTO "Instrumento" VALUES (4, "Novo", 25, "DX4", 3);
 
 INSERT INTO "Loja" VALUES ("NorteShopping", 150);
 INSERT INTO "Loja" VALUES ("Boavista", 250);

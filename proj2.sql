@@ -62,8 +62,7 @@ CREATE TABLE Instrumento (
     ID INTEGER PRIMARY KEY,
     qualidade TEXT,
     preçoAluguer FLOAT NOT NULL,
-    nomeMarca TEXT REFERENCES Marca NOT NULL,
-    nomeModelo TEXT REFERENCES Modelo NOT NULL,
+    nome TEXT REFERENCES Modelo NOT NULL,
 	nAluguer INTEGER REFERENCES Aluguer
 );
 
