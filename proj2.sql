@@ -14,20 +14,20 @@ DROP TABLE IF EXISTS EmpregadosDaLoja;
 
 CREATE TABLE Entidade (
     NIF INTEGER PRIMARY KEY,
-    nome TEXT,
-    telefone INTEGER,
+    nome TEXT UNIQUE NOT NULL,
+    telefone INTEGER NOT NULL,
     morada TEXT
 );
 
 CREATE TABLE Cliente (
     NIF INTEGER PRIMARY KEY REFERENCES Entidade,
-    ID INTEGER
+    ID INTEGER UNIQUE NOT NULL
 );
 
 CREATE TABLE Empregado (
     NIF INTEGER PRIMARY KEY REFERENCES Entidade,
-    salario INTEGER,
-    posicaoTrabalho TEXT,
+    salario INTEGER NOT NULL,
+    posicaoTrabalho TEXT NOT NULL,
     chefe TEXT REFERENCES Entidade
 );
 
@@ -38,19 +38,19 @@ CREATE TABLE OrganizadorEventos (
 
 CREATE TABLE Sala (
     nome TEXT PRIMARY KEY,
-    localizacao TEXT
+    localizacao TEXT NOT NULL
 );
 
 CREATE TABLE MarcouSala (
-    NIF INTEGER REFERENCES OrganizadorEventos,
-    nome TEXT REFERENCES Sala,
+    NIF INTEGER REFERENCES OrganizadorEventos NOT NULL,
+    nome TEXT REFERENCES Sala NOT NULL,
     PRIMARY KEY(NIF, nome)
 );
 
 CREATE TABLE Aluguer (
     nAluguer INTEGER PRIMARY KEY REFERENCES Cliente,
-    dataAluguer DATE,
-    dataEntrega DATE,
+    dataAluguer DATE NOT NULL,
+    dataEntrega DATE NOT NULL,
 	NIF INTEGER REFERENCES Cliente,
 	nome TEXT REFERENCES Sala,
 	CHECK (NIF is not null AND nome is null OR (NIF is null AND nome is not null))
@@ -59,8 +59,8 @@ CREATE TABLE Aluguer (
 CREATE TABLE Instrumento (
     ID INTEGER PRIMARY KEY,
     qualidade TEXT,
-    preçoAluguer FLOAT,
-    nome TEXT REFERENCES Marca,
+    preçoAluguer FLOAT NOT NULL,
+    nome TEXT REFERENCES Marca NOT NULL,
 	nAluguer INTEGER REFERENCES Aluguer
 );
 
@@ -70,25 +70,25 @@ CREATE TABLE Marca (
 
 CREATE TABLE Modelo (
     nome TEXT PRIMARY KEY,
-    precoCompra FLOAT,
+    precoCompra FLOAT NOT NULL,
     material TEXT,
-    tipo TEXT,
-    nomeMarca TEXT REFERENCES Marca
+    tipo TEXT NOT NULL,
+    nomeMarca TEXT REFERENCES Marca NOT NULL
 );
 
 CREATE TABLE Loja (
     localizacao TEXT PRIMARY KEY,
-    capacidade INTEGER
+    capacidade INTEGER NOT NULL
 );
 
 CREATE TABLE EmLoja (
-    nome TEXT REFERENCES Modelo,
-    localizacao TEXT REFERENCES Loja,
-    stock INTEGER,
+    nome TEXT REFERENCES Modelo NOT NULL,
+    localizacao TEXT REFERENCES Loja NOT NULL,
+    stock INTEGER NOT NULL CHECK(stock > 0),
     PRIMARY KEY(nome, localizacao)
 );
 
 CREATE TABLE EmpregadosDaLoja (
     localizacao TEXT PRIMARY KEY REFERENCES Loja,
-    NIF INTEGER REFERENCES Empregado
+    NIF INTEGER UNIQUE REFERENCES Empregado NOT NULL
 );
