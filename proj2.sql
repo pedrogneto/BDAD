@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS Aluguer;
 DROP TABLE IF EXISTS Instrumento;
 DROP TABLE IF EXISTS Marca;
 DROP TABLE IF EXISTS Modelo;
+DROP TABLE IF EXISTS Loja;
 DROP TABLE IF EXISTS EmLoja;
 DROP TABLE IF EXISTS EmpregadosDaLoja;
 
@@ -48,7 +49,7 @@ CREATE TABLE MarcouSala (
 );
 
 CREATE TABLE Aluguer (
-    nAluguer INTEGER PRIMARY KEY REFERENCES Cliente,
+    nAluguer INTEGER PRIMARY KEY,
     dataAluguer DATE NOT NULL,
     dataEntrega DATE NOT NULL,
 	NIF INTEGER REFERENCES Cliente,
@@ -62,7 +63,7 @@ CREATE TABLE Instrumento (
     qualidade TEXT,
     preçoAluguer FLOAT NOT NULL,
     nomeMarca TEXT REFERENCES Marca NOT NULL,
-    nomeModelo TEXT REFERENCES Modelo NOT NULL
+    nomeModelo TEXT REFERENCES Modelo NOT NULL,
 	nAluguer INTEGER REFERENCES Aluguer
 );
 
@@ -91,6 +92,7 @@ CREATE TABLE EmLoja (
 );
 
 CREATE TABLE EmpregadosDaLoja (
-    localizacao TEXT PRIMARY KEY REFERENCES Loja,
-    NIF INTEGER UNIQUE REFERENCES Empregado NOT NULL
+    localizacao TEXT REFERENCES Loja,
+    NIF INTEGER REFERENCES Empregado,
+	PRIMARY KEY(localizacao, NIF)
 );

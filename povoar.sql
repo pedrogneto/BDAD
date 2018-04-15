@@ -26,16 +26,11 @@ INSERT INTO "Sala" VALUES ("Guilhermina Suggia", "Casa da Musica, Rotunda da Boa
 INSERT INTO "Sala" VALUES ("Hard Club", "Rua Monzinho da Silveira 45 Porto");
 
 INSERT INTO "MarcouSala" VALUES (99999, "Hard Club");
-INSERT INTO "MarcouSala" VALUES (95555, "Guilhemina Suggia");
+INSERT INTO "MarcouSala" VALUES (95555, "Guilhermina Suggia");
 
 INSERT INTO "Aluguer" VALUES (1, "2018-04-13", "2018-04-15", 52345, NULL);
 INSERT INTO "Aluguer" VALUES (2, "2018-04-12", "2018-04-18", 52345, NULL);
-INSERT INTO "Aluguer" VALUES (3, "2018-04-13", "2018-04-15", 99999, "Hard Club");
-
-INSERT INTO "Instrumento" VALUES (1, "Novo", 15, "Yamaha", "Pacifica", NULL);
-INSERT INTO "Instrumento" VALUES (2, "Novo", 25, "Gibson", "Les Paul", 1);
-INSERT INTO "Instrumento" VALUES (3, "Gasto", 10, "Fender", "Telecaster", 2);
-INSERT INTO "Instrumento" VALUES (4, "Novo", 25, "Pearl", "DX4", 3);
+INSERT INTO "Aluguer" VALUES (3, "2018-04-13", "2018-04-15", NULL, "Hard Club");
 
 INSERT INTO "Marca" VALUES ("Gibson");
 INSERT INTO "Marca" VALUES ("Yamaha");
@@ -47,6 +42,11 @@ INSERT INTO "Modelo" VALUES ("Pacifica", 700, "Acer", "Guitarra Eletrica", "Yama
 INSERT INTO "Modelo" VALUES ("DX4", 1000, NULL, "Bateria", "Pearl");
 INSERT INTO "Modelo" VALUES ("Telecaster", 1000, "Acer", "Guitarra Eletrica", "Fender");
 
+INSERT INTO "Instrumento" VALUES (1, "Novo", 15, "Yamaha", "Pacifica", NULL);
+INSERT INTO "Instrumento" VALUES (2, "Novo", 25, "Gibson", "Les Paul", 1);
+INSERT INTO "Instrumento" VALUES (3, "Gasto", 10, "Fender", "Telecaster", 2);
+INSERT INTO "Instrumento" VALUES (4, "Novo", 25, "Pearl", "DX4", 3);
+
 INSERT INTO "Loja" VALUES ("NorteShopping", 150);
 INSERT INTO "Loja" VALUES ("Boavista", 250);
 
@@ -56,6 +56,6 @@ INSERT INTO "EmLoja" VALUES ("Pacifica", "Boavista", 2);
 INSERT INTO "EmLoja" VALUES ("DX4", "NorteShopping", 1);
 INSERT INTO "EmLoja" VALUES ("Telecaster", "Boavista", 3);
 
-INSERT INTO "EmpregadosLoja" VALUES ("NorteShopping", 12345);
-INSERT INTO "EmpregadosLoja" VALUES ("NorteShopping", 12346);
-INSERT INTO "EmpregadosLoja" VALUES ("Boavista", 15555);
+INSERT INTO "EmpregadosDaLoja" VALUES ("NorteShopping", 12345);
+INSERT INTO "EmpregadosDaLoja" VALUES ("NorteShopping", 12346);
+INSERT INTO "EmpregadosDaLoja" VALUES ("Boavista", 15555);
