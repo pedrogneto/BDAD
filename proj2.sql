@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS EmpregadosDaLoja;
 
 CREATE TABLE Entidade (
     NIF INTEGER PRIMARY KEY,
-    nome TEXT UNIQUE NOT NULL,
+    nome TEXT NOT NULL,
     telefone INTEGER NOT NULL,
     morada TEXT
 );
@@ -53,14 +53,16 @@ CREATE TABLE Aluguer (
     dataEntrega DATE NOT NULL,
 	NIF INTEGER REFERENCES Cliente,
 	nome TEXT REFERENCES Sala,
-	CHECK (NIF is not null AND nome is null OR (NIF is null AND nome is not null))
+	CHECK (NIF is not null AND nome is null OR (NIF is null AND nome is not null)),
+    CHECK (dataAluguer < dataEntrega)
 );
 
 CREATE TABLE Instrumento (
     ID INTEGER PRIMARY KEY,
     qualidade TEXT,
     preçoAluguer FLOAT NOT NULL,
-    nome TEXT REFERENCES Marca NOT NULL,
+    nomeMarca TEXT REFERENCES Marca NOT NULL,
+    nomeModelo TEXT REFERENCES Modelo NOT NULL
 	nAluguer INTEGER REFERENCES Aluguer
 );
 
