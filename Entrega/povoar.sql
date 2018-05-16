@@ -31,6 +31,7 @@ INSERT INTO "MarcouSala" VALUES (95555, "Guilhermina Suggia");
 INSERT INTO "Aluguer" VALUES (1, "2018-04-13", "2018-04-15", 52345, NULL);
 INSERT INTO "Aluguer" VALUES (2, "2018-04-12", "2018-04-18", 52345, NULL);
 INSERT INTO "Aluguer" VALUES (3, "2018-04-13", "2018-04-15", NULL, "Hard Club");
+INSERT INTO "Aluguer" VALUES (4, "2018-04-12", "2018-04-19", 99999, NULL);
 
 INSERT INTO "Marca" VALUES ("Gibson");
 INSERT INTO "Marca" VALUES ("Yamaha");
@@ -41,11 +42,13 @@ INSERT INTO "Modelo" VALUES ("Les Paul", 1500, "Mogno", "Guitarra Eletrica", "Gi
 INSERT INTO "Modelo" VALUES ("Pacifica", 700, "Acer", "Guitarra Eletrica", "Yamaha");
 INSERT INTO "Modelo" VALUES ("DX4", 1000, NULL, "Bateria", "Pearl");
 INSERT INTO "Modelo" VALUES ("Telecaster", 1000, "Acer", "Guitarra Eletrica", "Fender");
+INSERT INTO "Modelo" VALUES ("Stratcaster", 1000, "Acer", "Guitarra Eletrica", "Fender");
 
 INSERT INTO "Instrumento" VALUES (1, "Novo", 15, "Pacifica", NULL);
 INSERT INTO "Instrumento" VALUES (2, "Novo", 25, "Les Paul", 1);
 INSERT INTO "Instrumento" VALUES (3, "Gasto", 10, "Telecaster", 2);
 INSERT INTO "Instrumento" VALUES (4, "Novo", 25, "DX4", 3);
+INSERT INTO "Instrumento" VALUES (5, "Novo", 25, "Les Paul", 4);
 
 INSERT INTO "Loja" VALUES ("NorteShopping", 150);
 INSERT INTO "Loja" VALUES ("Boavista", 250);
