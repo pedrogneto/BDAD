@@ -61,7 +61,7 @@ CREATE TABLE Aluguer (
 CREATE TABLE Instrumento (
     ID INTEGER PRIMARY KEY,
     qualidade TEXT,
-    preçoAluguer FLOAT NOT NULL,
+    precoAluguer FLOAT NOT NULL,
     nome TEXT REFERENCES Modelo NOT NULL,
 	nAluguer INTEGER REFERENCES Aluguer
 );
