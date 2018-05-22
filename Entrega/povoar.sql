@@ -15,9 +15,12 @@ INSERT INTO "Cliente" VALUES (55555, 2);
 INSERT INTO "Cliente" VALUES (99999, 3);
 INSERT INTO "Cliente" VALUES (95555, 4);
 
-INSERT INTO "Empregado" VALUES (12345, 1000, "Empregado", 12346);
-INSERT INTO "Empregado" VALUES (12346, 1200, "Gerente", NULL);
-INSERT INTO "Empregado" VALUES (15555, 1000, "Empregado", 12346);
+INSERT INTO "TrabalhoSalario" VALUES ("Empregado", 1000);
+INSERT INTO "TrabalhoSalario" VALUES ("Gerente", 1200);
+
+INSERT INTO "Empregado" VALUES (12346, "Gerente", NULL);
+INSERT INTO "Empregado" VALUES (12345, "Empregado", 12346);
+INSERT INTO "Empregado" VALUES (15555, "Empregado", 12346);
 
 INSERT INTO "OrganizadorEventos" VALUES (99999, "Desconto de 15% em instrumentos de sopro");
 INSERT INTO "OrganizadorEventos" VALUES (95555, NULL);
@@ -38,17 +41,28 @@ INSERT INTO "Marca" VALUES ("Yamaha");
 INSERT INTO "Marca" VALUES ("Fender");
 INSERT INTO "Marca" VALUES ("Pearl");
 
+INSERT INTO "QualidadeModelo" VALUES ("Recem-Comprada");
+INSERT INTO "QualidadeModelo" VALUES ("Impecavel");
+INSERT INTO "QualidadeModelo" VALUES ("Aceitavel");
+INSERT INTO "QualidadeModelo" VALUES ("Gasto");
+
 INSERT INTO "Modelo" VALUES ("Les Paul", 1500, "Mogno", "Guitarra Eletrica", "Gibson");
 INSERT INTO "Modelo" VALUES ("Pacifica", 700, "Acer", "Guitarra Eletrica", "Yamaha");
 INSERT INTO "Modelo" VALUES ("DX4", 1000, NULL, "Bateria", "Pearl");
 INSERT INTO "Modelo" VALUES ("Telecaster", 1000, "Acer", "Guitarra Eletrica", "Fender");
 INSERT INTO "Modelo" VALUES ("Stratcaster", 1000, "Acer", "Guitarra Eletrica", "Fender");
 
-INSERT INTO "Instrumento" VALUES (1, "Novo", 15, "Pacifica", NULL);
-INSERT INTO "Instrumento" VALUES (2, "Novo", 25, "Les Paul", 1);
-INSERT INTO "Instrumento" VALUES (3, "Gasto", 10, "Telecaster", 2);
-INSERT INTO "Instrumento" VALUES (4, "Novo", 25, "DX4", 3);
-INSERT INTO "Instrumento" VALUES (5, "Novo", 25, "Les Paul", 4);
+INSERT INTO "PrecoAluguer" VALUES ("Les Paul", "Aceitavel", 16);
+INSERT INTO "PrecoAluguer" VALUES ("Les Paul", "Gasto", 13);
+INSERT INTO "PrecoAluguer" VALUES ("DX4", "Aceitavel", 14);
+INSERT INTO "PrecoAluguer" VALUES ("Telecaster", "Impecavel", 18);
+INSERT INTO "PrecoAluguer" VALUES ("Pacifica", "Recem-Comprada", 18);
+
+INSERT INTO "Instrumento" VALUES (1, "Recem-Comprada", "Pacifica", NULL);
+INSERT INTO "Instrumento" VALUES (2, "Aceitavel", "Les Paul", 1);
+INSERT INTO "Instrumento" VALUES (3, "Impecavel", "Telecaster", 2);
+INSERT INTO "Instrumento" VALUES (4, "Aceitavel", "DX4", 3);
+INSERT INTO "Instrumento" VALUES (5, "Gasto", "Les Paul", 4);
 
 INSERT INTO "Loja" VALUES ("NorteShopping", 150);
 INSERT INTO "Loja" VALUES ("Boavista", 250);

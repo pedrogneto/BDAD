@@ -30,8 +30,8 @@ CREATE TABLE Cliente (
 
 CREATE TABLE Empregado (
     NIF INTEGER PRIMARY KEY REFERENCES Entidade,
-    chefe TEXT REFERENCES Empregado,
-	posicaoTrabalho TEXT REFERENCES TrabalhoSalario
+	posicaoTrabalho TEXT REFERENCES TrabalhoSalario,
+	chefe INTEGER REFERENCES Empregado
 );
 
 CREATE TABLE TrabalhoSalario (
@@ -73,11 +73,11 @@ CREATE TABLE Instrumento (
 );
 
 CREATE TABLE QualidadeModelo (
-    qualidade TEXT PRIMARY KEY REFERENCES Marca
+    qualidade TEXT PRIMARY KEY
 );
 
 CREATE TABLE PrecoAluguer (
-    nome TEXT REFERENCES Marca,
+    nome TEXT REFERENCES Modelo,
 	qualidade TEXT REFERENCES QualidadeModelo,
 	precoAluguer FLOAT NOT NULL,
 	PRIMARY KEY(nome, qualidade)
