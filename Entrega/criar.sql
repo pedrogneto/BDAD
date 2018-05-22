@@ -1,12 +1,15 @@
 DROP TABLE IF EXISTS Entidade;
 DROP TABLE IF EXISTS Cliente;
 DROP TABLE IF EXISTS Empregado;
+DROP TABLE IF EXISTS TrabalhoSalario;
 DROP TABLE IF EXISTS OrganizadorEventos;
 DROP TABLE IF EXISTS Sala;
 DROP TABLE IF EXISTS MarcouSala;
 DROP TABLE IF EXISTS Aluguer;
 DROP TABLE IF EXISTS Instrumento;
 DROP TABLE IF EXISTS Marca;
+DROP TABLE IF EXISTS QualidadeModelo;
+DROP TABLE IF EXISTS PrecoAluguer;
 DROP TABLE IF EXISTS Modelo;
 DROP TABLE IF EXISTS Loja;
 DROP TABLE IF EXISTS EmLoja;
@@ -27,9 +30,13 @@ CREATE TABLE Cliente (
 
 CREATE TABLE Empregado (
     NIF INTEGER PRIMARY KEY REFERENCES Entidade,
-    salario INTEGER NOT NULL,
-    posicaoTrabalho TEXT NOT NULL,
-    chefe TEXT REFERENCES Entidade
+    chefe TEXT REFERENCES Empregado,
+	posicaoTrabalho TEXT REFERENCES TrabalhoSalario
+);
+
+CREATE TABLE TrabalhoSalario (
+    posicaoTrabalho TEXT PRIMARY KEY,
+	salario INTEGER NOT NULL
 );
 
 CREATE TABLE OrganizadorEventos (
@@ -43,8 +50,8 @@ CREATE TABLE Sala (
 );
 
 CREATE TABLE MarcouSala (
-    NIF INTEGER REFERENCES OrganizadorEventos NOT NULL,
-    nome TEXT REFERENCES Sala NOT NULL,
+    NIF INTEGER REFERENCES OrganizadorEventos,
+    nome TEXT REFERENCES Sala,
     PRIMARY KEY(NIF, nome)
 );
 
@@ -60,10 +67,20 @@ CREATE TABLE Aluguer (
 
 CREATE TABLE Instrumento (
     ID INTEGER PRIMARY KEY,
-    qualidade TEXT,
-    precoAluguer FLOAT NOT NULL,
+	qualidade TEXT REFERENCES QualidadeModelo NOT NULL,
     nome TEXT REFERENCES Modelo NOT NULL,
 	nAluguer INTEGER REFERENCES Aluguer
+);
+
+CREATE TABLE QualidadeModelo (
+    qualidade TEXT PRIMARY KEY REFERENCES Marca
+);
+
+CREATE TABLE PrecoAluguer (
+    nome TEXT REFERENCES Marca,
+	qualidade TEXT REFERENCES QualidadeModelo,
+	precoAluguer FLOAT NOT NULL,
+	PRIMARY KEY(nome, qualidade)
 );
 
 CREATE TABLE Marca (
