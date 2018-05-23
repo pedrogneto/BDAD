@@ -1,4 +1,4 @@
---Quanto estao aluguadas cada instrumento da marca Fender
+--Quanto tempo estao aluguadas cada instrumento da marca Fender
 
 SELECT Instrumento.nome, (strftime('%d', dataEntrega)-strftime('%d', dataAluguer))
 FROM Modelo, Aluguer INNER JOIN Instrumento 
