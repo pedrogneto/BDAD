@@ -5,5 +5,6 @@ SELECT c, SUM(precoAluguer) AS a FROM
 FROM Entidade, Cliente, Aluguer, Instrumento, PrecoAluguer
 WHERE Aluguer.NIF = Cliente.NIF
 AND Aluguer.nAluguer = Instrumento.nAluguer
-AND Instrumento.nome = PrecoAluguer.nome ) GROUP BY c
+AND Instrumento.nome = PrecoAluguer.nome 
+AND Instrumento.qualidade = PrecoAluguer.qualidade ) GROUP BY c
 ORDER BY a DESC;
