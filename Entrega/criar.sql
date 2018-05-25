@@ -101,8 +101,8 @@ CREATE TABLE Loja (
 );
 
 CREATE TABLE EmLoja (
-    nome TEXT REFERENCES Modelo NOT NULL,
-    localizacao TEXT REFERENCES Loja NOT NULL,
+    nome TEXT REFERENCES Modelo,
+    localizacao TEXT REFERENCES Loja,
     stock INTEGER NOT NULL CHECK(stock > 0),
     PRIMARY KEY(nome, localizacao)
 );
