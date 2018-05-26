@@ -59,8 +59,8 @@ CREATE TABLE Aluguer (
     nAluguer INTEGER PRIMARY KEY,
     dataAluguer DATE NOT NULL,
     dataEntrega DATE NOT NULL,
-	NIF INTEGER REFERENCES Cliente,
-	nome TEXT REFERENCES Sala,
+	NIF INTEGER DEFAULT NULL REFERENCES Cliente,
+	nome TEXT DEFAULT NULL REFERENCES Sala,
 	CHECK (NIF is not null AND nome is null OR (NIF is null AND nome is not null)),
     CHECK (dataAluguer < dataEntrega)
 );
