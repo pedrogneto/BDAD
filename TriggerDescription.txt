@@ -1,0 +1,7 @@
+Descrição dos Triggers a ser colocado no Relatório:
+
+
+1 - Trigger que assegura que cada loja não ultrapassa a sua capacidade.
+
+2 - Trigger que assegura que quando um instrumento é adicionado, se não existir nenhum preço de aluguer para o par (modelo, qualidade) desse instrumento, 
+	então este é criado a partir do preço de compra do modelo.
