@@ -1,5 +1,6 @@
 PRAGMA foreign_keys=ON;
 
+
 INSERT INTO "Entidade" VALUES (12345, 'Joao', 931111111,'Rua da Alegria 35 Porto');
 INSERT INTO "Entidade" VALUES (12346, 'Fernado', 931151111,'Rua da Alegria 55 Porto');
 INSERT INTO "Entidade" VALUES (15555, 'Roberto', 961114511,'Rua Costa Cabral 5 Porto');
@@ -16,7 +17,6 @@ INSERT INTO "Entidade" VALUES (81523, 'Festas Bonitas', 924556321,'Rua das Flore
 INSERT INTO "Entidade" VALUES (54268, 'FeiraFesta', 924553321,'Via St. Inacio 31 2oC Madalena');
 INSERT INTO "Entidade" VALUES (12585, 'Rural Festival', 911863631,'Rua Dr. Ramalhao Faria 501 Vila Nova de Gaia');
 INSERT INTO "Entidade" VALUES (81873, 'Sabados Musicais', 229421789,'Avenida Professor Rogerio Figueiredo 142 Maia');
-INSERT INTO "Entidade" VALUES (55555, 'Musica para Bebes', 963449478,'Rua Isolino Domingues da Silva 220 3oB Vila Nova da Telha');
 INSERT INTO "Entidade" VALUES (82223, '17th Minho World Music Festival', 225588221,'Alameda do Vinho Verde 11A Minho');
 INSERT INTO "Entidade" VALUES (11563, 'Celebracao de Carreira Rodrigo Santos', 911125464,'Alameda Mariana Salcedo 211 Porto');
 INSERT INTO "Entidade" VALUES (33526, 'IndieTuga', 917633448,'Via do Mosteiro 77 1oB Gondomar');
@@ -99,7 +99,6 @@ INSERT INTO "OrganizadorEventos" VALUES (81523, "Desconto de 10% em todos os ins
 INSERT INTO "OrganizadorEventos" VALUES (54268, "Desconto de 25% em instrumentos de percursao");
 INSERT INTO "OrganizadorEventos" VALUES (12585, "Desconto de 35% em acessorios");
 INSERT INTO "OrganizadorEventos" VALUES (81873, NULL);
-INSERT INTO "OrganizadorEventos" VALUES (55555, NULL);
 INSERT INTO "OrganizadorEventos" VALUES (82223, "Desconto de 15% em guitarras");
 INSERT INTO "OrganizadorEventos" VALUES (11563, NULL);
 INSERT INTO "OrganizadorEventos" VALUES (33526, NULL);
@@ -151,10 +150,10 @@ INSERT INTO "Aluguer" VALUES (4, "2018-04-12", "2018-04-19", 99999, NULL);
 /*ALUGUERES NOVOS*/
 INSERT INTO "Aluguer" VALUES (5, "2018-05-12", "2018-05-18", 80085, NULL);
 INSERT INTO "Aluguer" VALUES (6, "2018-04-18", "2018-04-28", 23321, NULL);
-INSERT INTO "Aluguer" VALUES (7, "2018-05-12", "2018-04-19", 63219, NULL);
+--INSERT INTO "Aluguer" VALUES (7, "2018-05-12", "2018-04-19", 63219, NULL);
 INSERT INTO "Aluguer" VALUES (8, "2018-06-12", "2018-06-18", 66633, NULL);
-INSERT INTO "Aluguer" VALUES (9, "2018-05-22", "2018-04-28", 33666, NULL);
-INSERT INTO "Aluguer" VALUES (10, "2018-05-05", "2018-04-30", 64200, NULL);
+--INSERT INTO "Aluguer" VALUES (9, "2018-05-22", "2018-04-28", 33666, NULL);
+--INSERT INTO "Aluguer" VALUES (10, "2018-05-05", "2018-04-30", 64200, NULL);
 INSERT INTO "Aluguer" VALUES (11, "2018-06-12", "2018-07-18", 20005, NULL);
 INSERT INTO "Aluguer" VALUES (12, "2018-04-29", "2018-05-03", NULL, "Bar do Alex");
 INSERT INTO "Aluguer" VALUES (13, "2018-05-24", "2018-06-04", NULL, "Pavilhao Rosa Mota");
@@ -262,8 +261,8 @@ INSERT INTO "EmLoja" VALUES("CX2","Zona Industrial da Maia",1);
 INSERT INTO "EmLoja" VALUES("DA-X5","Zona Industrial da Maia",1);
 INSERT INTO "EmLoja" VALUES("Saturn 09","Zona Industrial da Maia",1);
 INSERT INTO "EmLoja" VALUES("Progressive","Vivaci",1);
-INSERT INTO "EmLoja" VALUES("Progressive","Boavista",);
-INSERT INTO "EmLoja" VALUES("AD810","Vivaci",);
+INSERT INTO "EmLoja" VALUES("Progressive","Boavista", 2);
+INSERT INTO "EmLoja" VALUES("AD810","Vivaci", 3);
 
 INSERT INTO "EmpregadosDaLoja" VALUES ("NorteShopping", 12345);
 INSERT INTO "EmpregadosDaLoja" VALUES ("NorteShopping", 12346);
