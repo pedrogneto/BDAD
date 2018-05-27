@@ -1,5 +1,9 @@
 --Alugueres em cada sala de eventos do Porto depois de uma data
 
+.mode columns
+.headers on
+.nullvalue NULL
+
 SELECT Sala.nome, Aluguer.dataAluguer, Aluguer.dataEntrega, 
 Sala.localizacao
 FROM Sala INNER JOIN Aluguer ON Sala.nome = Aluguer.nome
